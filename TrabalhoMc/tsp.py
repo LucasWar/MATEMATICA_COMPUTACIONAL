@@ -17,7 +17,7 @@ class Tsp:
         return nova_caminho
 
     def lerArquivo(self,nome):
-        arquivo = open(os.getcwd()+"\\entradas\\"+nome, "r")
+        arquivo = open(os.getcwd()+"\\TrabalhoMc\\entradas\\"+nome, "r")
         texto = arquivo.read()
         linhas = texto.strip().split('\n')
         matriz = []
@@ -34,3 +34,7 @@ class Tsp:
                 distancaiTotal += matriz[caminho[i-1]][caminho[i]]
             distancaiTotal += matriz[caminho[-1]][caminho[0]]
             return distancaiTotal
+
+    def resultado(self,solucao):
+         print(f"Solucao: {solucao}")
+         print(f"Valor menor caminho: {self.funcaoFit(solucao)}")
